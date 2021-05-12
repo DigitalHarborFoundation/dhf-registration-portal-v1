@@ -49,6 +49,15 @@ const Header: React.FC = () => {
           </a>
         </Link>
         <Flex direction='row' align='center' justify='center'>
+          <Link href='/' passHref>
+            <ChakraLink
+              display={["none", "none", "inline-flex", "inline-flex"]}
+            >
+              <Text fontSize='lg' color='white' marginRight={4}>
+                Register
+              </Text>
+            </ChakraLink>
+          </Link>
           <Link href='/programs' passHref>
             <ChakraLink
               display={["none", "none", "inline-flex", "inline-flex"]}
