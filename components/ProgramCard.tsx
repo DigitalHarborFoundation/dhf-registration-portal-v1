@@ -54,7 +54,13 @@ const ProgramCard = ({ data }) => {
             ml={0}
             paddingBottom={1}
           >
-            {data.fields["Name"]}
+            <Link
+              href={`/programs/${kebabCase(data.fields["Name"])}?id=${
+                data.fields.record_id
+              }`}
+            >
+              {data.fields["Name"]}
+            </Link>
           </Box>
           <Box
             as='p'

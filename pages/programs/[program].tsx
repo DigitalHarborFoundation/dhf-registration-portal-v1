@@ -1,9 +1,22 @@
-import { Heading, Flex, Box, AspectRatio, Image } from "@chakra-ui/react";
 const ReactMarkdown = require("react-markdown");
+import { Heading, Text, Flex, Box, AspectRatio, Image } from "@chakra-ui/react";
+import ChakraUIRenderer, { defaults } from "chakra-ui-markdown-renderer";
+
 import { jsx, css } from "@emotion/react";
 
 const ProgramLandingPage = ({ name, featuredImage, detailedDescription }) => {
-  console.log({ name, featuredImage, detailedDescription });
+  const markdownTheme = {
+    ...defaults,
+    paragraph: (props) => {
+      const { children } = props;
+      return (
+        <Text mb={2} fontSize={"80px"} color='red'>
+          {children}
+        </Text>
+      );
+    },
+  };
+
   return (
     <Flex direction='column' justify='center' align='center '>
       <Box
@@ -31,27 +44,31 @@ const ProgramLandingPage = ({ name, featuredImage, detailedDescription }) => {
 
         <Box paddingY={4} textColor='gray.900'>
           <ReactMarkdown
-            css={css`
-              > ul {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-                padding-left: 2rem;
-              }
-              > p:first-of-type {
-                padding-bottom: 1rem;
-
-                > a {
-                  color: #3182ce;
-                  cursor: pointer;
-                  text-decoration: none;
-                  transition: all 0.15s ease-out;
-                  &:hover {
-                    text-decoration: underline;
-                  }
-                }
-              }
-            `}
+            renderers={ChakraUIRenderer(markdownTheme)}
             children={detailedDescription}
+            // css={css`
+            //   h2 {
+            //     font-size: 8rem;
+            //   }
+            //   > ul {
+            //     padding-top: 1rem;
+            //     padding-bottom: 1rem;
+            //     padding-left: 2rem;
+            //   }
+            //   > p:first-of-type {
+            //     padding-bottom: 1rem;
+
+            //     > a {
+            //       color: #3182ce;
+            //       cursor: pointer;
+            //       text-decoration: none;
+            //       transition: all 0.15s ease-out;
+            //       &:hover {
+            //         text-decoration: underline;
+            //       }
+            //     }
+            //   }
+            // `}
           />
         </Box>
       </Box>
@@ -69,8 +86,6 @@ export async function getServerSideProps({ params, query }) {
 
   const res = await fetch(
     `https://api.airtable.com/v0/${baseId}/${programsTable}?filterByFormula=%7Bname_api_lookup%7D%3D%27${params.program}%27&api_key=${airApiKey}`,
-    // `https://api.airtable.com/v0/${baseId}/${programsTable}/${query.id}?api_key=${airApiKey}`,
-    // `https://api.airtable.com/v0/appKSaLsVtw29p6ld/Programs/recSaeUqXWGTz1XNT?api_key=keyIMrsUReqToqXRv`,
 
     { method: "GET", mode: "no-cors", credentials: "same-origin" }
   );
