@@ -89,9 +89,23 @@ const CapacityCard = ({ data }) => {
               fontWeight='normal'
               letterSpacing='wide'
               fontSize='md'
-              paddingBottom={4}
             >
               <Text>{data.fields["Dates"]}</Text>
+            </Box>
+          ) : null}
+          {data.fields["Days"] ? (
+            <Box
+              as='p'
+              color='gray.800'
+              fontWeight='light'
+              letterSpacing='wide'
+              fontSize='md'
+              paddingBottom={4}
+            >
+              <Text>
+                {data.fields["Days"]}{" "}
+                {data.fields["Times"] ? data.fields["Times"] : null}
+              </Text>
             </Box>
           ) : null}
           {data.fields["Seats Available"] ? (
