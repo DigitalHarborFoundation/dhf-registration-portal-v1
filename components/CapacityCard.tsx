@@ -12,6 +12,10 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
+interface Image {
+  id?: string;
+  url?: string;
+}
 interface CapacityCardProps {
   data: {
     id?: string;
@@ -21,7 +25,7 @@ interface CapacityCardProps {
       Dates?: string;
       Days?: Array<string>;
       "Enrolled Youth"?: number;
-      "Featured Image"?: Array<string>;
+      "Featured Image"?: Array<Image>;
       Name?: string;
       Program?: Array<string>;
       "Program Code"?: string;
@@ -40,8 +44,6 @@ interface CapacityCardProps {
 }
 
 const CapacityCard = ({ data }: CapacityCardProps) => {
-  console.log("data", data);
-  console.log("typeof", typeof data.fields);
   return (
     <Box
       height='auto'
@@ -52,7 +54,6 @@ const CapacityCard = ({ data }: CapacityCardProps) => {
       borderColor='gray.300'
       paddingBottom={8}
     >
-      {/* <Link href={`/programs/${kebabCase(data.fields["Name"])}`}> */}
       <Box>
         {data.fields["Featured Image"] && (
           <AspectRatio width='100%' height='300px' ratio={4 / 3}>
@@ -64,7 +65,7 @@ const CapacityCard = ({ data }: CapacityCardProps) => {
           </AspectRatio>
         )}
       </Box>
-      {/* </Link> */}
+
       <Box paddingX={4} alignItems='center' justifyContent='center'>
         <Flex
           direction='row'
