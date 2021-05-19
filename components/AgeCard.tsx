@@ -12,7 +12,15 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 
-const AgeCard = ({ img, alt, title, programType, children }) => {
+interface AgeCardProps {
+  img: string;
+  alt: string;
+  title: string;
+  programType: string;
+  children: React.ReactNode;
+}
+
+const AgeCard = ({ img, alt, title, programType, children }: AgeCardProps) => {
   const router = useRouter();
 
   return (
