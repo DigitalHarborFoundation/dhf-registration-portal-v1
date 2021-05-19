@@ -13,11 +13,35 @@ import {
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 interface CapacityCardProps {
-  data: object;
+  data: {
+    id?: string;
+    fields?: {
+      Age?: Array<string>;
+      Capacity?: string;
+      Dates?: string;
+      Days?: Array<string>;
+      "Enrolled Youth"?: number;
+      "Featured Image"?: Array<string>;
+      Name?: string;
+      Program?: Array<string>;
+      "Program Code"?: string;
+      Registrants?: Array<string>;
+      "Registration Form URL"?: string;
+      "Seats Available"?: number;
+      Session?: string;
+      Tag?: string;
+      Times?: Array<string>;
+      "Total Seats"?: number;
+      "Waitlist Form URL"?: string;
+      Year?: number;
+      recordId?: string;
+    };
+  };
 }
 
-const CapacityCard = ({ data }) => {
+const CapacityCard = ({ data }: CapacityCardProps) => {
   console.log("data", data);
+  console.log("typeof", typeof data.fields);
   return (
     <Box
       height='auto'
