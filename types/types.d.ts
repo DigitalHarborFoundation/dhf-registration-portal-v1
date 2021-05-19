@@ -27,6 +27,7 @@ export interface ProgramInstanceDataProps {
       Year?: number;
       recordId?: string;
     };
+    map: Array;
   };
 }
 
