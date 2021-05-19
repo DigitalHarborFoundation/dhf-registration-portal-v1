@@ -1,7 +1,8 @@
 import { Box, Grid } from "@chakra-ui/react";
 import ProgramCard from "../components/ProgramCard";
+import { ProgramDataProps } from "../types/types";
 
-const ProgramGrid = ({ data }) => {
+const ProgramGrid = ({ data }: ProgramDataProps) => {
   return (
     <Grid
       templateColumns={[

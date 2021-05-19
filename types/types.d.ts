@@ -49,5 +49,6 @@ export interface ProgramDataProps {
       name_api_lookup?: string;
       record_id?: string;
     };
+    map: Array;
   };
 }
