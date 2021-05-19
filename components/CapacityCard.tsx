@@ -12,7 +12,12 @@ import {
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 
+interface CapacityCardProps {
+  data: object;
+}
+
 const CapacityCard = ({ data }) => {
+  console.log("data", data);
   return (
     <Box
       height='auto'
