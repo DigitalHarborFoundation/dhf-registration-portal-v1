@@ -11,9 +11,9 @@ import {
   Link as ChakraLink,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { CapacityCardProps } from "../types/data";
+import { ProgramInstanceDataProps } from "../types/types";
 
-const CapacityCard = ({ data }: CapacityCardProps) => {
+const CapacityCard = ({ data }: ProgramInstanceDataProps) => {
   return (
     <Box
       height='auto'

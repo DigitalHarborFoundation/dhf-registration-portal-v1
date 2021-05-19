@@ -1,8 +1,9 @@
 import Link from "next/link";
 import kebabCase from "lodash.kebabcase";
 import { AspectRatio, Image, Box, Button, Flex } from "@chakra-ui/react";
+import { ProgramDataProps } from "../types/types";
 
-const ProgramCard = ({ data }) => {
+const ProgramCard = ({ data }: ProgramDataProps) => {
   return (
     <Box
       h='auto'

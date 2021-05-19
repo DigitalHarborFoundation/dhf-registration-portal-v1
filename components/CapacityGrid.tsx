@@ -1,7 +1,8 @@
 import { Box, Grid } from "@chakra-ui/react";
 import CapacityCard from "../components/CapacityCard";
+import { ProgramInstanceDataProps } from "../types/types";
 
-const CapacityGrid = ({ data }) => {
+const CapacityGrid = ({ data }: ProgramInstanceDataProps) => {
   return (
     <Grid
       templateColumns={[

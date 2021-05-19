@@ -3,7 +3,7 @@ export interface Image {
   url?: string;
 }
 
-export interface CapacityCardProps {
+export interface ProgramInstanceDataProps {
   data: {
     id?: string;
     fields?: {
@@ -26,6 +26,28 @@ export interface CapacityCardProps {
       "Waitlist Form URL"?: string;
       Year?: number;
       recordId?: string;
+    };
+  };
+}
+
+export interface ProgramDataProps {
+  data: {
+    id?: string;
+    fields?: {
+      Age?: Array<string>;
+      "Course Type"?: string;
+      Days?: Array<string>;
+      Description?: string;
+      "Detailed Program Description"?: string;
+      "Featured Image"?: Array<Image>;
+      Name?: string;
+      Pathway?: string;
+      "Program Instances": Array<string>;
+      "Program Code"?: string;
+      Sessions?: Array<string>;
+      Times?: string;
+      name_api_lookup?: string;
+      record_id?: string;
     };
   };
 }
