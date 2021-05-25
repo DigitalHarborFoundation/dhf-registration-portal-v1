@@ -155,7 +155,7 @@ const Home = () => {
 
                 <Text textColor='gray.900'>
                   Our Elementary Maker Camps are open to{" "}
-                  <Text as='strong'>participants ages 6 - 12 years old</Text>.
+                  <Text as='strong'>participants ages 6 - 10 years old</Text>.
                 </Text>
 
                 <Text textColor='gray.900'>
@@ -183,7 +183,7 @@ const Home = () => {
 
                 <Text textColor='gray.900'>
                   Our Middle-High Maker Camps are open to{" "}
-                  <Text as='strong'>participants ages 13 - 18 years old</Text>.
+                  <Text as='strong'>participants ages 11 - 14 years old</Text>.
                 </Text>
 
                 <Text textColor='gray.900'>
