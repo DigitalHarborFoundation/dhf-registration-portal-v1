@@ -59,8 +59,8 @@ const AgeCard = ({ img, alt, title, programType, children }: AgeCardProps) => {
           marginBottom={4}
         >
           {programType === "Elementary"
-            ? "Nano Maker (6 - 12 years old)"
-            : "Mega Maker (13 - 18 years old)"}
+            ? "Nano Maker (6 - 10 years old)"
+            : "Mega Maker (11 - 14 years old)"}
         </Badge>
         <Box paddingX={4}>{children}</Box>
 
