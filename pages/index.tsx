@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { useRouter } from "next/router";
 import SiteLayout from "../components/SiteLayout";
 import {
@@ -20,7 +19,6 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 import useSWR from "swr";
-
 import AgeCard from "../components/AgeCard";
 import CapacityGrid from "../components/CapacityGrid";
 
@@ -43,7 +41,6 @@ const Home = () => {
   const [selectedProgramAge, setSelectedProgramAge] = useState(false);
   const router = useRouter();
   const { data, error } = useSWR(`/api/get-all-program-instances`, fetcher, {});
-
   const handleProgramAgeSelect = (age) => {
     console.log("selected:", age);
     setProgramAge(age);

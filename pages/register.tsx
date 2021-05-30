@@ -16,7 +16,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 import useSWR from "swr";
-
 import AgeCard from "../components/AgeCard";
 import CapacityGrid from "../components/CapacityGrid";
 import { GiConsoleController } from "react-icons/gi";
