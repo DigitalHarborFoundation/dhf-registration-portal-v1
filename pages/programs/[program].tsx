@@ -79,7 +79,6 @@ const ProgramLandingPage = ({ name, featuredImage, detailedDescription }) => {
 export default ProgramLandingPage;
 
 export async function getServerSideProps({ params, query }) {
-  console.log("query", query.id);
   const airApiKey = process.env.AIR_API_KEY;
   const baseId = process.env.BASE_ID;
   const programsTable = process.env.PROGRAMS_TABLE_NAME;

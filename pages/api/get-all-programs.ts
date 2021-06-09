@@ -14,7 +14,7 @@ const getAllPrograms = async (req, res) => {
       const airtableData = [];
       programsTable
         .select({
-          view: "All Information",
+          view: "Filter: Public Registration [True]",
           sort: [{ field: "Name", direction: "asc" }],
         })
         .eachPage(

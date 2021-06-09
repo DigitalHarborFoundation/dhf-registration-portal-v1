@@ -14,7 +14,7 @@ const getAllProgramInstances = async (req, res) => {
       const airtableData = [];
       programInstancesTable
         .select({
-          view: "All Information",
+          view: "Filter: Public Registration [True]",
           sort: [{ field: "Session", direction: "asc" }],
         })
         .eachPage(
