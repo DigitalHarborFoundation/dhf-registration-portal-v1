@@ -38,7 +38,6 @@ const RegisterPage = () => {
   const [programAge, setProgramAge] = useState("");
   const router = useRouter();
   const { data, error } = useSWR(`/api/get-all-program-instances`, fetcher, {});
-  console.log("data from swr", data);
 
   if (error) {
     return (

@@ -42,7 +42,6 @@ const Home = () => {
   const router = useRouter();
   const { data, error } = useSWR(`/api/get-all-program-instances`, fetcher, {});
   const handleProgramAgeSelect = (age) => {
-    console.log("selected:", age);
     setProgramAge(age);
     router.push(`?${age}`);
     setSelectedProgramAge(true);

@@ -52,8 +52,6 @@ const RegistrationForm = () => {
   const handleSubmit = async (values) => {
     setSending(true);
 
-    console.log(values);
-
     const { firstName, lastName, email, programInstance } = values;
     const res = await fetch("/api/create-registrant", {
       method: "POST",
